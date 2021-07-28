@@ -44,7 +44,7 @@ abstract public class Number {
 		if (coef > 9) {
 			sum = 0;
 			for (int i = 0; i < number.length(); i++) {
-				sum += Character.getNumericValue(number.charAt(i)) * (i + 3);
+				sum += (i == number.length() - 1 && number.length() == 9 ? 1 : i + 3) * Character.getNumericValue(number.charAt(i));
 			}
 			coef = sum % 11;
 			if (coef > 9) {
